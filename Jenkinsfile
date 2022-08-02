@@ -1,20 +1,16 @@
 node {
     def app
 
-    stage('Clone repository') {
-      
-
+    stage('Clone repository') {    
         checkout scm
     }
 
     stage('Build image') {
   
-       app = docker.build("raj80dockerid/test")
+       app = docker.build("pman06/test")
     }
 
     stage('Test image') {
-  
-
         app.inside {
             sh 'echo "Tests passed"'
         }
