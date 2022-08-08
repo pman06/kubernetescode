@@ -26,4 +26,12 @@ Install the following plugins for the demo.
 Install ArgoCD in your Kubernetes cluster following this link - https://argo-cd.readthedocs.io/en/stable/getting_started/
 
 ## How to run!
-Follow along with my Udemy Kubernetes course lectures (GitOps Chapter) to understand how it works, detailed setup instructions, with step by step demo. My highest rated Kubernetes EKS discounted Udemy course link in www.cloudwithraj.com
+1. Fork this repository as well as the [kubernetes manifest](https://github.com/pman06/kubernetesmanifest "manifest repository") repository
+2. Add Jenkins server URl webhooks to both repositories webhooks settings
+3. Also add the repository to your created Jenkins pipeline projects
+    - Your manifest jenkins projects should be named updatemanifest in order to receive docker image tags as paramater.
+4. Add docker hub credentials to jenkins environment variables to allow image push to dockerhub
+5. Add Gitub credentials(username and personal access token) to Jenkins server environmet
+6. Add kubernetesmanifest repository url to your argocd app (running in the kubernetes cluster from the tutorial above) to fetch latest updates from the repo when new version is pushed to the repository.
+
+### Thanks and Enjoy
